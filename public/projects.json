@@ -1,0 +1,41 @@
+[
+  {
+    "id": "carshop",
+    "title": "CarShop",
+    "tech": ["Node.JS", "MySQL", "React", "Express", "jQuery"],
+    "summary": "Full-stack e-commerce platform for vehicle parts featuring AI recommendations and real-time customer chat.",
+    "details": [
+      "Engineered a RESTful API with Node.js and Express for product, user, and order management.",
+      "Implemented a real-time customer support chat using WebSockets.",
+      "Developed an AI-powered recommendation engine based on user browsing history."
+    ],
+    "demo": "#",
+    "source": "#"
+  },
+  {
+    "id": "apartment-management",
+    "title": "Apartment Complex Management System",
+    "tech": ["Oracle", "SQL", "PL/SQL", "Reporting"],
+    "summary": "Normalized relational database with optimized stored procedures and reporting tools for property and resident management.",
+    "details": [
+      "Designed a 3NF relational database schema to eliminate data redundancy.",
+      "Wrote complex PL/SQL stored procedures and triggers to automate rent collection and maintenance requests.",
+      "Built custom reporting tools to track occupancy rates and financial performance."
+    ],
+    "demo": "#",
+    "source": "#"
+  },
+  {
+    "id": "student-globe",
+    "title": "Student Globe",
+    "tech": ["Kotlin", "Firebase", "WebSockets", "Android Studio"],
+    "summary": "Native Android social platform with real-time chat rooms and N-Tier architecture for maintainability.",
+    "details": [
+      "Developed a native Android application using Kotlin and modern Android jetpack components.",
+      "Used Firebase Authentication for secure user sign-up and login.",
+      "Implemented real-time chat rooms using Firebase Realtime Database."
+    ],
+    "demo": "#",
+    "source": "#"
+  }
+]

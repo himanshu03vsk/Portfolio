@@ -1,0 +1,406 @@
+/* Neobrutalism-inspired styles -- UPDATED */
+:root {
+  /* User-provided palette */
+  --bg: #FAF9F6;            /* Background (Base) Off-white */
+  --primary: #007BFF;       /* Primary Electric Blue */
+  --accent: #FF3B81;        /* Accent Hot Pink */
+  --secondary: #FFEB3B;     /* Secondary Bright Yellow */
+  --neutral-dark: #111111;  /* Neutral Dark (Text) */
+  --neutral-light: #E5E5E5; /* Neutral Light (Alt Background) */
+  --success: #00FF85;       /* Success Mint Green */
+  --warning: #FFC107;       /* Warning Amber */
+  --error: #FF1744;         /* Error Bright Red */
+  --highlight-shadow: #000000; /* Highlight / Shadow pure black for outlines */
+  --panel: #FFFFFF;         /* panel background (cards) */
+  
+  --text: var(--neutral-dark);
+  --muted: #5a5a4a;
+  --border: var(--neutral-dark);
+  
+  /* --- KEY CHANGE --- 
+     Using the solid black for shadows as intended */
+  --shadow: var(--highlight-shadow);
+  
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  
+  /* Make the gradient cover the entire page height consistently */
+  background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%) fixed;
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures it fills the full viewport height */
+  background-attachment: fixed; /* Keeps gradient stationary when scrolling */
+  
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+}
+
+
+
+
+
+
+a { color: inherit; text-decoration: none; }
+.muted { color: var(--muted); }
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px clamp(18px, 4vw, 36px);
+  border-bottom: 8px solid var(--border);
+  /* Using panel color for a cleaner header */
+  background: var(--panel);
+}
+
+.logo-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border: 8px solid var(--border);
+  border-radius: var(--radius);
+  /* --- KEY CHANGE --- Solid shadow */
+  background: var(--panel);
+  box-shadow: 10px 10px 0 var(--shadow);
+}
+.avatar { width: 48px; height: 48px; border-radius: 6px; display: block; }
+.brand-link { color: var(--muted); font-weight: 700; }
+.avatar[src$=".svg"] { width: 64px; height: 64px; border-radius: 12px; border: 6px solid var(--border); background: linear-gradient(90deg, var(--primary), var(--accent)); }
+.brand-text h1 { font-size: 1.1rem; margin: 0; }
+.brand-text p { margin: 0; font-size: .85rem; color: var(--muted); }
+
+.main-nav { display: flex; gap: 14px; }
+.main-nav a {
+  padding: 10px 12px;
+  border: 4px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font-weight: 700;
+  transition: transform .14s ease, box-shadow .14s ease, filter .14s ease; /* Added filter */
+}
+
+/* --- KEY CHANGES START --- */
+/* Color the main nav buttons */
+.main-nav a:nth-child(1) {
+  background: var(--primary);
+  color: var(--panel);
+}
+.main-nav a:nth-child(2) {
+  background: var(--accent);
+  color: var(--panel);
+}
+.main-nav a:nth-child(3) {
+  background: var(--secondary);
+  color: var(--text);
+}
+/* --- KEY CHANGES END --- */
+
+
+.main-nav a:hover {
+  transform: translateY(-2px);
+  /* --- KEY CHANGE --- Solid shadow */
+  box-shadow: 6px 6px 0 var(--shadow);
+  filter: brightness(1.1); /* General hover brightness */
+}
+/* Yellow needs to darken, not brighten */
+.main-nav a:nth-child(3):hover {
+  filter: brightness(0.95);
+}
+
+.main-nav a.cta {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: white;
+  border-color: var(--border); /* Keep border consistent */
+}
+.main-nav a.cta:hover {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  filter: brightness(1.1);
+}
+.menu-toggle { display: none; }
+
+/* Hero */
+.hero {
+  padding: 56px 18px;
+  /* --- KEY CHANGE --- 
+     Reverted this back to the default page background */
+  /* background: var(--bg); */
+}
+.hero-card {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 32px;
+  border: 10px solid var(--border);
+  border-radius: 18px;
+  /* --- KEY CHANGE --- Solid shadow and flat white bg */
+  background: var(--panel);
+  box-shadow: 18px 18px 0 var(--shadow);
+  position: relative;
+}
+.hero-card .sunburst { position: absolute; right: -18px; top: -18px; }
+.hero h2 { margin-top: 0; font-size: 1.9rem; }
+.lead { font-size: 1.05rem; color: var(--muted); }
+.actions { margin-top: 16px; display: flex; gap: 10px; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 6px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+  text-decoration: none;
+  font-weight: 800;
+  /* --- KEY CHANGE --- Solid shadow */
+  box-shadow: 8px 8px 0 var(--shadow);
+  color: var(--text);
+  transition: transform .14s ease, box-shadow .14s ease, opacity .12s, background .14s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 10px 10px 0 var(--shadow); /* Slightly bigger shadow on hover */
+}
+.btn:active {
+  transform: translateY(1px) scale(.995);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+/* --- KEY CHANGE --- Style the primary hero button */
+.hero .actions .btn {
+  background: var(--primary);
+  color: var(--panel);
+}
+.hero .actions .btn.ghost {
+  background: transparent;
+  color: var(--text);
+}
+.hero .actions .btn.ghost:hover {
+  background: var(--panel);
+}
+
+.btn.ghost { background: transparent; }
+.btn.small { padding: 8px 10px; font-size: .85rem; }
+
+/* Sections */
+
+/* --- KEY CHANGE START --- */
+/* Add margin to stacked cards (like in Experience) */
+.section .card + .card {
+  margin-top: 24px;
+}
+/* --- KEY CHANGE END --- */
+.section { max-width: 920px; margin: 28px auto; padding: 0 18px; }
+.section h3 { margin-bottom: 12px; }
+.card {
+  padding: 20px;
+  border: 10px solid var(--border);
+  border-radius: 12px;
+  /* --- KEY CHANGE --- Flat white background */
+  background: var(--panel);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.site-banner { display: flex; justify-content: center; margin: 22px 0; }
+.banner-inner {
+  background: var(--panel);
+  padding: 10px 18px;
+  border-radius: 18px;
+  border: 8px solid var(--border);
+  font-weight: 800;
+  /* --- KEY CHANGE --- Solid shadow */
+  box-shadow: 8px 8px 0 var(--shadow);
+}
+.card:hover {
+  transform: translateY(-6px);
+  /* --- KEY CHANGE --- Solid shadow */
+  box-shadow: 12px 12px 0 var(--shadow);
+}
+
+
+.project-details ul {
+  padding-left: 20px; /* Standard list indentation */
+  margin-top: 12px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.project-details li {
+  margin-bottom: 8px; /* Spacing between bullet points */
+  line-height: 1.5;
+}
+/* Add this new rule anywhere in your CSS: */
+.project-card p.muted {
+  margin-top: 12px;
+}
+/* Projects grid */
+.grid { display: grid; grid-template-columns: 1fr; /* <-- THIS IS THE CHANGE */; gap: 18px; }
+.project-card {
+  position: relative;
+  padding: 16px;
+  border: 10px solid var(--border);
+  border-radius: 12px;
+  /* --- KEY CHANGE --- Flat white background */
+  background: var(--panel);
+  overflow: hidden;
+}
+
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+.project-actions { margin-top: 12px; display: flex; gap: 8px; }
+
+/* --- KEY CHANGES START --- */
+/* Color the project buttons */
+.project-actions .btn {
+  background: var(--primary);
+  color: var(--panel);
+  border-color: var(--border);
+}
+.project-actions .btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.project-actions .btn.ghost:hover {
+  background: var(--accent);
+  color: var(--panel);
+}
+/* Ensure project demo button hover is correct */
+.project-actions .btn:not(.ghost):hover {
+  background: var(--primary);
+  filter: brightness(1.1);
+}
+/* --- KEY CHANGES END --- */
+
+/* Reveal animation */
+.fade-in { opacity: 0; transform: translateY(12px) scale(.995); transition: opacity .45s ease, transform .45s cubic-bezier(.2, .9, .2, 1); }
+.fade-in.reveal { opacity: 1; transform: translateY(0) scale(1); }
+
+/* small micro interactions */
+.project-card:hover {
+  transform: translateY(-6px) rotate(-.2deg);
+  /* --- KEY CHANGE --- Solid shadow */
+  box-shadow: 18px 18px 0 var(--shadow);
+}
+
+/* subtle animations for header */
+.site-header { transition: background .18s ease, box-shadow .18s ease; }
+.site-header.scrolled {
+  /* --- KEY CHANGE --- Solid shadow */
+  box-shadow: 0 8px 0 var(--shadow);
+}
+
+/* Footer */
+.site-footer {
+  padding: 18px;
+  text-align: center;
+  border-top: 6px solid var(--border);
+  margin-top: 28px;
+  background: var(--neutral-light); /* Give footer a different bg */
+}
+
+/* Responsive adjustments */
+@media (max-width: 820px) {
+  .main-nav { display: none; }
+  .menu-toggle {
+    display: block;
+    border: 6px solid var(--border);
+    background: var(--panel);
+    padding: 8px;
+    border-radius: 10px;
+  }
+  .hero h2 { font-size: 1.5rem; }
+  .hero { padding: 28px 12px; }
+}
+
+/* Small nav open state handled via class toggled by JS */
+.main-nav.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 90px; /* Adjusted for new header padding */
+  background: var(--panel);
+  padding: 12px;
+  border: 6px solid var(--border);
+  border-radius: 12px;
+  /* --- KEY CHANGE --- Solid shadow */
+  box-shadow: 12px 12px 0 var(--shadow);
+  z-index: 10;
+}
+/* Reset nav button colors for mobile menu */
+.main-nav.open a {
+  background: var(--panel);
+  color: var(--text);
+}
+.main-nav.open a:hover {
+  background: var(--neutral-light);
+  filter: none;
+}
+.main-nav.open a.cta {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: white;
+}
+.main-nav.open a.cta:hover {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  filter: brightness(1.1);
+}
+
+
+/* --- KEY CHANGES START --- */
+
+/* Skills badges */
+.skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.skill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 4px solid var(--border);
+  /* Using a solid color for skill badges */
+  background: var(--neutral-light); /* This is the default */
+  font-weight: 700;
+  font-size: .85rem;
+  transition: transform .15s ease; /* Added transition */
+}
+
+.skill:hover {
+  transform: translateY(-2px); /* Add simple hover effect */
+}
+
+/* New Color Variants for Pills */
+.skill.blue { background-color: var(--primary); color: var(--panel); }
+.skill.pink { background-color: var(--accent); color: var(--panel); }
+.skill.yellow { background-color: var(--secondary); color: var(--text); }
+.skill.green { background-color: var(--success); color: var(--text); }
+.skill.amber { background-color: var(--warning); color: var(--text); }
+
+/* --- KEY CHANGES END --- */
+
+
+/* Focus states for accessibility */
+a:focus, button:focus {
+  outline: 3px dashed var(--accent);
+  outline-offset: 4px;
+}
