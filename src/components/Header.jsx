@@ -22,7 +22,7 @@ export default function Header() {
         <div className="logo-card">
           {/* Link brand to the Home page */}
           <Link to="/" onClick={closeMenu}>
-            <img className="avatar" src="/assets/avatar.svg" alt="Himanshu Vishwakarma" />
+            <img className="avatar" src="/assets/avatar.png" alt="Himanshu Vishwakarma" />
           </Link>
           <div className="brand-text">
             <Link to="/" style={{textDecoration: 'none', color: 'inherit'}} onClick={closeMenu}>
