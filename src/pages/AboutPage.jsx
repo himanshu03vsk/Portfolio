@@ -11,7 +11,7 @@ export default function AboutPage() {
       <main>
         <section id="about-page" className="section">
           <div className="card">
-            <h2>More About Me</h2>
+            <h2 data-title="More About Me">More About Me</h2>
             <p>This is where you can add more personal details, hobbies, your journey into computer science, etc.</p>
             <p>You could add paragraphs, images, or anything else you like here.</p>
             

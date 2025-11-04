@@ -205,7 +205,7 @@ a { color: inherit; text-decoration: none; }
 }
 /* --- KEY CHANGE END --- */
 .section { max-width: 920px; margin: 28px auto; padding: 0 18px; }
-.section h3 { margin-bottom: 12px; }
+/* Remove the simple h3 style as it's defined in detail below */
 .card {
   padding: 20px;
   border: 10px solid var(--border);
@@ -374,27 +374,119 @@ a { color: inherit; text-decoration: none; }
 
 /* Skills badges */
 .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+
+/* Sparkle Animation */
+@keyframes sparkle {
+  0% {
+    background-position: 0% 50%;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: translateY(-3px) scale(1.02);
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .skill {
   padding: 6px 10px;
   border-radius: 999px;
   border: 4px solid var(--border);
-  /* Using a solid color for skill badges */
-  background: var(--neutral-light); /* This is the default */
+  background: var(--neutral-light);
   font-weight: 700;
   font-size: .85rem;
-  transition: transform .15s ease; /* Added transition */
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .skill:hover {
-  transform: translateY(-2px); /* Add simple hover effect */
+  animation: sparkle 1.5s ease-in-out infinite;
+  border-color: transparent;
+  background: linear-gradient(
+    90deg, 
+    var(--primary), 
+    var(--accent), 
+    var(--secondary),
+    var(--primary)
+  );
+  background-size: 300% 100%;
+  box-shadow: 4px 4px 0 var(--shadow);
 }
 
-/* New Color Variants for Pills */
-.skill.blue { background-color: var(--primary); color: var(--panel); }
-.skill.pink { background-color: var(--accent); color: var(--panel); }
-.skill.yellow { background-color: var(--secondary); color: var(--text); }
-.skill.green { background-color: var(--success); color: var(--text); }
-.skill.amber { background-color: var(--warning); color: var(--text); }
+/* Color Variants for Pills with hover override */
+.skill.blue { 
+  background-color: var(--primary); 
+  color: var(--panel); 
+}
+.skill.blue:hover {
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--accent),
+    var(--primary)
+  );
+  background-size: 300% 100%;
+}
+
+.skill.pink { 
+  background-color: var(--accent); 
+  color: var(--panel); 
+}
+.skill.pink:hover {
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--primary),
+    var(--accent)
+  );
+  background-size: 300% 100%;
+}
+
+.skill.yellow { 
+  background-color: var(--secondary); 
+  color: var(--text); 
+}
+.skill.yellow:hover {
+  background: linear-gradient(
+    90deg,
+    var(--secondary),
+    var(--warning),
+    var(--secondary)
+  );
+  background-size: 300% 100%;
+}
+
+.skill.green { 
+  background-color: var(--success); 
+  color: var(--text); 
+}
+.skill.green:hover {
+  background: linear-gradient(
+    90deg,
+    var(--success),
+    var(--primary),
+    var(--success)
+  );
+  background-size: 300% 100%;
+}
+
+.skill.amber { 
+  background-color: var(--warning); 
+  color: var(--text); 
+}
+.skill.amber:hover {
+  background: linear-gradient(
+    90deg,
+    var(--warning),
+    var(--secondary),
+    var(--warning)
+  );
+  background-size: 300% 100%;
+}
 
 /* --- KEY CHANGES END --- */
 
@@ -404,3 +496,43 @@ a:focus, button:focus {
   outline: 3px dashed var(--accent);
   outline-offset: 4px;
 }
+
+
+
+/* --- KEY CHANGE START --- */
+
+/* Section Titles with Neobrutalist Animation */
+.section h3 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 12px 20px;
+  
+  /* Text styling */
+  color: var(--text);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  /* Removed text-transform: uppercase */
+  
+  /* Box styling */
+  background: var(--panel);
+  border: 4px solid var(--border);
+  border-radius: 8px;
+  
+  /* Animation setup */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.section h3:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: 8px 8px 0 var(--shadow);
+  
+  /* Gradient border animation */
+  background: 
+    linear-gradient(to right, var(--primary), var(--accent)) padding-box,
+    linear-gradient(to right, var(--primary), var(--accent)) border-box;
+  border-color: transparent;
+}
+
+/* --- KEY CHANGE END --- */

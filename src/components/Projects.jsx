@@ -23,7 +23,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="section projects">
-      <h3>Selected projects</h3>
+      <h3 data-title="Projects">Selected projects</h3>
       <div id="projects-grid" className="grid" aria-live="polite">
         {error && (
           <div className="card" style={{ gridColumn: '1/-1' }}>

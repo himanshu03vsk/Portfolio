@@ -3,7 +3,7 @@ import React from 'react';
 export default function Experience() {
   return (
     <section id="experience" className="section">
-      <h3>Experience</h3>
+      <h3 data-title="Experience">Experience</h3>
       
       <div className="card">
         <h4>AI & ML Intern — Trademark Analytics (Remote)</h4>
