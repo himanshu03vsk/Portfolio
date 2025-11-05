@@ -6,7 +6,7 @@ export default function Contact() {
       <h3 data-title="Contact">Contact</h3>
       <div className="card">
         <p className="muted">Email: <a href="mailto:Himanshu02vskk@gmail.com">Himanshu02vskk@gmail.com</a></p>
-        <p className="muted">Or connect on <a href="#">LinkedIn</a> / <a href="#">GitHub</a>.</p>
+        <p className="muted">Or connect on <a href="#">LinkedIn</a> / <a href="https://www.linkedin.com/in/himanshu-vishwakarma-312759195/">GitHub</a>.</p>
       </div>
     </section>
   );

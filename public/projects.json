@@ -10,7 +10,7 @@
       "Developed an AI-powered recommendation engine based on user browsing history."
     ],
     "demo": "#",
-    "source": "#"
+    "source": "https://github.com/himanshu03vsk/carshop"
   },
   {
     "id": "apartment-management",
@@ -36,6 +36,6 @@
       "Implemented real-time chat rooms using Firebase Realtime Database."
     ],
     "demo": "#",
-    "source": "#"
+    "source": "https://github.com/himanshu03vsk/StudentGlobeK"
   }
 ]
